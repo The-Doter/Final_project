@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float speed;
 
+    private float _protein;
+    private float _maxProtein = 100;
+    public float addProtein;
+    public RectTransform valueRectTransform;
+
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
 
@@ -16,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        DrawProtein();
     }
 
     void Update()
@@ -64,4 +70,17 @@ public class PlayerController : MonoBehaviour
             _fallVelocity = -jumpForce;
         }
     }
+
+    public void AddProtein()
+    {
+        _protein += addProtein;
+        DrawProtein();
+        Debug.Log(_protein);
+    }
+
+    public void DrawProtein()
+    {
+        valueRectTransform.anchorMax = new Vector2(_protein / _maxProtein, 1);
+    }
+
 }
