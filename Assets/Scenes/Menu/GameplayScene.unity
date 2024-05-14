@@ -3185,7 +3185,7 @@ MonoBehaviour:
   gravity: 9.8
   jumpForce: 10
   speed: 5
-  addProtein: 10
+  addProtein: 20
   valueRectTransform: {fileID: 1783776476}
 --- !u!4 &1031632034601738857
 Transform:

@@ -73,9 +73,9 @@ public class PlayerController : MonoBehaviour
 
     public void AddProtein()
     {
+        transform.localScale += Vector3.one;
         _protein += addProtein;
         DrawProtein();
-        Debug.Log(_protein);
     }
 
     public void DrawProtein()
