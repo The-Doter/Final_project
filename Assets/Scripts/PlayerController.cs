@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float _maxProtein = 100;
     public float addProtein;
     public RectTransform valueRectTransform;
+    public float becomeBigger;
 
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
 
     public void AddProtein()
     {
-        transform.localScale += Vector3.one;
+        transform.localScale += Vector3.one * becomeBigger;
         _protein += addProtein;
         DrawProtein();
     }

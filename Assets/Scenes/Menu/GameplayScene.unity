@@ -3183,10 +3183,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9.8
-  jumpForce: 10
+  jumpForce: 6
   speed: 5
   addProtein: 20
   valueRectTransform: {fileID: 1783776476}
+  becomeBigger: 0.2
 --- !u!4 &1031632034601738857
 Transform:
   m_ObjectHideFlags: 0
