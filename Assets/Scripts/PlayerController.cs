@@ -27,6 +27,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E) && valueRectTransform.anchorMax.x >= 1)
+        {
+            speed +=speed;
+            jumpForce +=jumpForce;
+            _protein = 0;
+            DrawProtein();
+        }
         _moveVector = Vector3.zero;
         Movement();
     }
@@ -76,7 +83,10 @@ public class PlayerController : MonoBehaviour
     {
         transform.localScale += Vector3.one * becomeBigger;
         _protein += addProtein;
-        DrawProtein();
+        if(valueRectTransform.anchorMax.x < 1)
+        {
+            DrawProtein();
+        }
     }
 
     public void DrawProtein()
