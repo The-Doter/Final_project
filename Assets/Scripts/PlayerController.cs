@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
 
+    public Fireball fireballPrefab;
+    public Transform fireballSourceTransform;
+    
     private CharacterController _characterController;
     
     void Start()
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
             jumpForce +=jumpForce;
             _protein = 0;
             DrawProtein();
+            Instantiate(fireballPrefab, fireballSourceTransform.position, fireballSourceTransform.rotation);
         }
         _moveVector = Vector3.zero;
         Movement();
