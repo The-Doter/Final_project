@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+        CursorLock();
         _characterController = GetComponent<CharacterController>();
         DrawProtein();
     }
@@ -96,6 +97,12 @@ public class PlayerController : MonoBehaviour
     public void DrawProtein()
     {
         valueRectTransform.anchorMax = new Vector2(_protein / _maxProtein, 1);
+    }
+
+    public void CursorLock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 }
