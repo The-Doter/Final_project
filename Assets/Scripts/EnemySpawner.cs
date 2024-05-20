@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     private List<Transform> _spawnerPoints;
     private List<EnemyAI> _enemies;
+    private EnemyAI _enemyAI;
 
     public List<Transform> patrolPoints;
 
@@ -19,12 +20,19 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        _enemyAI = GetComponent<EnemyAI>();
         _spawnerPoints = new List<Transform>(transform.GetComponentsInChildren<Transform>());
         _enemies = new List<EnemyAI>();
     }
 
     void Update()
     {
+        for(int i = 0; i < _enemies.Count; i++)
+        {
+            if(_enemies[i].IsAlive()) continue;
+            _enemies.RemoveAt(i);
+            i--;
+        }
         if(_enemies.Count >= enemiesMaxCount) return;
         if(Time.time - _timeLastSpawned < delay) return;
 

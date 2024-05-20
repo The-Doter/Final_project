@@ -12,8 +12,13 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
 
+    private Vector3 OldPosition;
+    private EnemySpawner _enemySpawner;
+    public int value = 100;
+
     void Start()
     {
+        OldPosition = transform.position;
         Links();
         PickNewPatrolPoint();
     }
@@ -27,6 +32,11 @@ public class EnemyAI : MonoBehaviour
     }
 
 
+    public bool IsAlive()
+    {
+        return value > 0;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         var PlayerController = collision.gameObject.GetComponent<PlayerController>();
@@ -34,6 +44,7 @@ public class EnemyAI : MonoBehaviour
         {
             PlayerController.AddProtein();
             Destroy(gameObject);
+            value -= 100;
         }
     }
 
@@ -45,6 +56,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Links()
     {
+        _enemySpawner = GetComponent<EnemySpawner>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
