@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,16 +17,28 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
 
+    public Fireball fireballPrefab;
+    public Transform fireballSourceTransform;
+    
     private CharacterController _characterController;
     
     void Start()
     {
+        CursorLock();
         _characterController = GetComponent<CharacterController>();
         DrawProtein();
     }
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.E) && valueRectTransform.anchorMax.x >= 1)
+        {
+            speed +=speed;
+            jumpForce +=jumpForce;
+            _protein = 0;
+            DrawProtein();
+            Instantiate(fireballPrefab, fireballSourceTransform.position, fireballSourceTransform.rotation);
+        }
         _moveVector = Vector3.zero;
         Movement();
     }
@@ -76,12 +88,21 @@ public class PlayerController : MonoBehaviour
     {
         transform.localScale += Vector3.one * becomeBigger;
         _protein += addProtein;
-        DrawProtein();
+        if(valueRectTransform.anchorMax.x < 1)
+        {
+            DrawProtein();
+        }
     }
 
     public void DrawProtein()
     {
         valueRectTransform.anchorMax = new Vector2(_protein / _maxProtein, 1);
+    }
+
+    public void CursorLock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 }
