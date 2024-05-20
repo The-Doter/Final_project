@@ -26,6 +26,18 @@ public class EnemyAI : MonoBehaviour
         PatrolUpdate();
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        var PlayerController = collision.gameObject.GetComponent<PlayerController>();
+        if(collision.gameObject.tag == "Player" && transform.localScale.x <= player.transform.localScale.x)
+        {
+            PlayerController.AddProtein();
+            Destroy(gameObject);
+        }
+    }
+
+
     private void PickNewPatrolPoint()
     {
         _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;

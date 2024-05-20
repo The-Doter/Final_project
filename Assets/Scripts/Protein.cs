@@ -8,7 +8,7 @@
         void OnTriggerEnter(Collider other)
         {
             var PlayerController = other.gameObject.GetComponent<PlayerController>();
-            if(PlayerController != null)
+            if(PlayerController != null && other.gameObject.tag == "Player")
             {
                 PlayerController.AddProtein();
                 Destroy(gameObject);
