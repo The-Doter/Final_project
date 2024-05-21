@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesMaxCount = 5;
     public float delay = 5;
     public PlayerController player;
-    
+
+    public TextMeshProUGUI txt;
+    private int KillsStatus;
 
     private List<Transform> _spawnerPoints;
     private List<EnemyAI> _enemies;
@@ -33,6 +36,8 @@ public class EnemySpawner : MonoBehaviour
             if(_enemies[i].IsAlive()) continue;
             _enemies.RemoveAt(i);
             i--;
+            KillsStatus++;
+            txt.text = KillsStatus.ToString() + "/15";
         }
         if(_enemies.Count >= enemiesMaxCount) return;
         if(Time.time - _timeLastSpawned < delay) return;

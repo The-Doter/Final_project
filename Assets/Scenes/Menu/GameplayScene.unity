@@ -185,6 +185,7 @@ MonoBehaviour:
   enemiesMaxCount: 5
   delay: 5
   player: {fileID: 616017752}
+  txt: {fileID: 357004896}
   patrolPoints:
   - {fileID: 1255449863}
   - {fileID: 1934520746}
@@ -207,6 +208,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &357004896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2831710849596158932, guid: d023f9b42d5e1ac46bb33a4abd63972b,
+    type: 3}
+  m_PrefabInstance: {fileID: 395022464014147116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &462497589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 194044, guid: c5c16fbf60fbeb143acbf29a92228616,
@@ -2306,6 +2319,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2831710849596158932, guid: d023f9b42d5e1ac46bb33a4abd63972b,
+        type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8679605446615987592, guid: d023f9b42d5e1ac46bb33a4abd63972b,
         type: 3}
       propertyPath: m_Icon
@@ -2390,6 +2408,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 980434448898830637, guid: ff62312e2d8dc3b4083f09989f5ba6e5,
+        type: 3}
+      propertyPath: txt
+      value: 
+      objectReference: {fileID: 357004896}
     - target: {fileID: 980434448898830637, guid: ff62312e2d8dc3b4083f09989f5ba6e5,
         type: 3}
       propertyPath: player

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public PlayerController player;
     public float viewAngle;
     public float damage = 30;
+
 
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
