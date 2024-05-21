@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
+    public PlayerController PlCont;
 
     void Start()
     {

@@ -53,12 +53,19 @@ public class EnemyAI : MonoBehaviour
         return value > 0;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         var PlayerController = collision.gameObject.GetComponent<PlayerController>();
         if(collision.gameObject.tag == "Player" && transform.localScale.x <= player.transform.localScale.x)
         {
             PlayerController.AddProtein();
+            Destroy(gameObject);
+            value -= 100;
+            _navMeshAgent.stoppingDistance += 0.2f;
+        }
+        else if(collision.gameObject.tag == "Fireball")
+        {
+            player.AddProtein();
             Destroy(gameObject);
             value -= 100;
             _navMeshAgent.stoppingDistance += 0.2f;
