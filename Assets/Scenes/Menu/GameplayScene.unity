@@ -466,7 +466,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 395022464014147116}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1199823214}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d51643c343303eb45b84d14f919f84b1, type: 3}
@@ -1289,6 +1289,12 @@ Transform:
   m_Father: {fileID: 2054847752}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -53.270004, y: 0, z: 0}
+--- !u!1 &1199823214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 700889215906536610, guid: d023f9b42d5e1ac46bb33a4abd63972b,
+    type: 3}
+  m_PrefabInstance: {fileID: 395022464014147116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1200100973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2418,6 +2424,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 616017752}
+    - target: {fileID: 980434448898830637, guid: ff62312e2d8dc3b4083f09989f5ba6e5,
+        type: 3}
+      propertyPath: _gameObjectPlayer
+      value: 
+      objectReference: {fileID: 1199823214}
     - target: {fileID: 980434448898830637, guid: ff62312e2d8dc3b4083f09989f5ba6e5,
         type: 3}
       propertyPath: patrolPoints.Array.data[0]
