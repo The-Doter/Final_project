@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Continue()
+    {
+        Pause.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void QuitToMenu()
     {
         SceneManager.LoadScene("Alina");

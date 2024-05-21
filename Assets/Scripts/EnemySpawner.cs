@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public int enemiesMaxCount = 5;
     public float delay = 5;
     public PlayerController player;
+    
 
     private List<Transform> _spawnerPoints;
     private List<EnemyAI> _enemies;
@@ -41,11 +42,13 @@ public class EnemySpawner : MonoBehaviour
 
     private void CreateEnemy()
     {
+        var newSize = Random.Range(player.transform.localScale.x - 1, player.transform.localScale.x + 1);
         var enemy = Instantiate(enemyPrefab);
         enemy.transform.position = _spawnerPoints[Random.Range(0, _spawnerPoints.Count)].position;
         enemy.player = player;
         enemy.patrolPoints = patrolPoints;
         _enemies.Add(enemy);
+        enemy.transform.localScale = new Vector3(newSize, newSize, newSize);
         _timeLastSpawned = Time.time;
     }
 }
