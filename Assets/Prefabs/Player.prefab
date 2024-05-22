@@ -2374,6 +2374,7 @@ GameObject:
   - component: {fileID: 700889215906536636}
   - component: {fileID: 700889215906536611}
   - component: {fileID: 2364665720442894764}
+  - component: {fileID: -5669539293625899165}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2479,6 +2480,25 @@ MonoBehaviour:
   DieScreen: {fileID: 3409055088054684311}
   LoseAudioScript: {fileID: 5753391895181022289, guid: 427f5a15e147d124c9ba416b3d47785c,
     type: 3}
+--- !u!95 &-5669539293625899165
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700889215906536610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &756154255884369913
 GameObject:
   m_ObjectHideFlags: 0

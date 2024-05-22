@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 980434448898830637}
   - component: {fileID: 980434448898830636}
   - component: {fileID: 980434448898830639}
-  - component: {fileID: 7904478094289804668}
+  - component: {fileID: 3018593821913528288}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -109,7 +109,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!95 &7904478094289804668
+--- !u!95 &3018593821913528288
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

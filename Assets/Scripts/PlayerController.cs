@@ -21,11 +21,14 @@ public class PlayerController : MonoBehaviour
 
     public Fireball fireballPrefab;
     public Transform fireballSourceTransform;
+
+    private Animator anim;
     
     private CharacterController _characterController;
     
     void Start()
     {
+        anim = GetComponent<Animator>();
         CursorLock();
         _characterController = GetComponent<CharacterController>();
         DrawProtein();
@@ -41,6 +44,7 @@ public class PlayerController : MonoBehaviour
             DrawProtein();
             Instantiate(fireballPrefab, fireballSourceTransform.position, fireballSourceTransform.rotation);
             Instantiate(FireballAudioClip);
+            anim.SetBool("Fireball", true);
         }
         _moveVector = Vector3.zero;
         Movement();
@@ -63,21 +67,25 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
+            anim.SetBool("IsMove", true);
             _moveVector += transform.forward;
         }
 
         if(Input.GetKey(KeyCode.S))
         {
+            anim.SetBool("IsMove", true);
             _moveVector -= transform.forward;
         }
 
         if(Input.GetKey(KeyCode.D))
         {
+            anim.SetBool("IsMove", true);
             _moveVector += transform.right;
         }
 
         if(Input.GetKey(KeyCode.A))
         {
+            anim.SetBool("IsMove", true);
             _moveVector -= transform.right;
         }
 
