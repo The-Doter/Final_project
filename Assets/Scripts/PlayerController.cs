@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && valueRectTransform.anchorMax.x >= 1)
         {
-            speed +=speed;
-            jumpForce +=jumpForce;
+            speed += 3;
+            jumpForce += 1;
             _protein = 0;
             DrawProtein();
             Instantiate(fireballPrefab, fireballSourceTransform.position, fireballSourceTransform.rotation);

@@ -61,7 +61,7 @@ public class EnemyAI : MonoBehaviour
             PlayerController.AddProtein();
             Destroy(gameObject);
             value -= 100;
-            _navMeshAgent.stoppingDistance += 0.2f;
+            _navMeshAgent.stoppingDistance *= 1.1f;
         }
         else if(collision.gameObject.tag == "Fireball")
         {
