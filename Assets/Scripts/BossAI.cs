@@ -9,6 +9,7 @@ public class BossAI : MonoBehaviour
     public float damage = 30;
     public PlayerController player;
     public GameObject VinScreen;  
+    public GameObject VinBossAudioClip;
 
 
     private NavMeshAgent _navMeshAgent;
@@ -27,13 +28,10 @@ public class BossAI : MonoBehaviour
     {
         if(value <= 0)
         {
+            Instantiate(VinBossAudioClip);
             Time.timeScale = 0;
             VinScreen.SetActive(true);
             Destroy(gameObject);
-            if(Input.GetKeyDown(KeyCode.G))
-            {
-                SceneManager.LoadScene("Alina");
-            }
         }
         _navMeshAgent.destination = player.transform.position;
         AttackUpdate();

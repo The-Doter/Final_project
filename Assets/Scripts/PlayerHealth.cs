@@ -7,9 +7,13 @@ public class PlayerHealth : MonoBehaviour
     public float value = 100;
     public RectTransform HealthRectTransform;
     public float _maxValue;
+    public GameObject DieScreen;
+    public GameObject LoseAudioScript;
+    private bool OneTime = true;
 
     void Start()
     {
+        DieScreen.SetActive(false);
         _maxValue = value;
         DrawHealthBar();
     }
@@ -19,7 +23,13 @@ public class PlayerHealth : MonoBehaviour
         value -= damage;
         if(value <= 0)
         {
-            Destroy(gameObject);
+            if(OneTime)
+            {
+                OneTime = false;
+                Instantiate(LoseAudioScript);
+            }
+            Time.timeScale = 0;
+            DieScreen.SetActive(true);
         }
         DrawHealthBar();
     }

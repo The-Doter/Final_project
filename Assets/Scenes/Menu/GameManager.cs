@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             Pause.SetActive(true);
             Time.timeScale = 0;
         }
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         Pause.SetActive(false);
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void QuitToMenu()
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("GameplayScene");
     }
 }

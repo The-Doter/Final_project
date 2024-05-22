@@ -9915,6 +9915,12 @@ PrefabInstance:
       propertyPath: gravity
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 700889215906536636, guid: d023f9b42d5e1ac46bb33a4abd63972b,
+        type: 3}
+      propertyPath: JumpAudioClip
+      value: 
+      objectReference: {fileID: 6371001914972064940, guid: 24c65ceb134f18140abf65488e6659b7,
+        type: 3}
     - target: {fileID: 2831710849596158932, guid: d023f9b42d5e1ac46bb33a4abd63972b,
         type: 3}
       propertyPath: m_isRightToLeft

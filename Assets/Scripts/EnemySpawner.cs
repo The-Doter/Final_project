@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
             _enemies.RemoveAt(i);
             i--;
             KillsStatus++;
-            txt.text = KillsStatus.ToString() + "/15";
+            txt.text = KillsStatus.ToString() + "/10";
         }
         if(_enemies.Count >= enemiesMaxCount) return;
         if(Time.time - _timeLastSpawned < delay) return;

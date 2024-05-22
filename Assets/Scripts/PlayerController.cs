@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float gravity = 9.8f;
     public float jumpForce;
+    public GameObject JumpAudioClip;
+    public GameObject FireballAudioClip;
     public float speed;
 
     private float _protein;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
             _protein = 0;
             DrawProtein();
             Instantiate(fireballPrefab, fireballSourceTransform.position, fireballSourceTransform.rotation);
+            Instantiate(FireballAudioClip);
         }
         _moveVector = Vector3.zero;
         Movement();
@@ -80,6 +83,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
+            Instantiate(JumpAudioClip);
             _fallVelocity = -jumpForce;
         }
     }
